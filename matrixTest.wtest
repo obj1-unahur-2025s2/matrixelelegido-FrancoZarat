@@ -20,3 +20,29 @@ describe "testeamos a neo " {
     assert.equals(50,neo.energia())
   }
 }
+
+describe "testeamos a morfeo" {
+  test"morfeo no es el elegido" {
+    assert.notThat(morfeo.esElElegido())
+  }
+  test"vitalidad  inicial de morfeo" {
+    assert.equals(8,morfeo.vitalidad())
+  }
+  test "morfeo salta" {
+    morfeo.saltar()
+    assert.equals(7,morfeo.vitalidad())
+  }
+}
+
+describe "testeamos a trinity" {
+  test "trinity no es la elegida" {
+    assert.notThat(trinity.esElElegido())
+  }
+  test "vitalidad inicial de trinity" {
+    assert.equals(0,trinity.vitalidad())
+  }
+  test "saltar no afecta a trinity" {
+    trinity.saltar()
+    assert.equals(0,trinity.vitalidad())
+  }
+}
